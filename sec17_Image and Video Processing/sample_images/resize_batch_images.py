@@ -1,0 +1,24 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Sep 13 20:42:45 2021
+
+@author: Yunpeng Cheng
+
+@E_mail: ycheng22@hotmail.com
+
+@Github: https://github.com/ycheng22
+
+Reference:
+"""
+import cv2
+import glob
+
+images=glob.glob("*.jpg")
+
+for image in images:
+    img=cv2.imread(image,0)
+    re=cv2.resize(img,(100,100))
+    cv2.imshow("Hey",re)
+    cv2.waitKey(500)
+    cv2.destroyAllWindows()
+    cv2.imwrite("resized_"+image,re)
